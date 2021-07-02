@@ -1,6 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListBoxDemo", "ListBoxDemo\ListBoxDemo.csproj", "{0B9A04D8-1064-4522-990A-7CB4197D490A}"
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31410.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ListBoxDemo", "ListBoxDemo\ListBoxDemo.csproj", "{0B9A04D8-1064-4522-990A-7CB4197D490A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeListView", "TreeListView\TreeListView.csproj", "{83C0E6E5-AFC4-4A84-977F-8C014D00CD89}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -12,5 +17,15 @@ Global
 		{0B9A04D8-1064-4522-990A-7CB4197D490A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B9A04D8-1064-4522-990A-7CB4197D490A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0B9A04D8-1064-4522-990A-7CB4197D490A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83C0E6E5-AFC4-4A84-977F-8C014D00CD89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83C0E6E5-AFC4-4A84-977F-8C014D00CD89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83C0E6E5-AFC4-4A84-977F-8C014D00CD89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83C0E6E5-AFC4-4A84-977F-8C014D00CD89}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E6DE81C8-CD1C-43AB-B541-DE240CA1B9B0}
 	EndGlobalSection
 EndGlobal

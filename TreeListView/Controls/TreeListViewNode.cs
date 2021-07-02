@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Media;
 
-namespace ListBoxDemo.Controls {
+namespace TreeListView.Controls {
     public class TreeListViewNode : Control {
 
         public static readonly RoutedEvent ExpandedChangedEvent;
@@ -46,8 +40,8 @@ namespace ListBoxDemo.Controls {
         /// <summary>
         /// 是否还有子节点, 用于控制伸缩图标
         /// </summary>
-        public bool HasItem => this.Children.Any();
-        
+        public bool HasItem => Children.Any();
+
         /// <summary>
         /// 当前节点的父节点
         /// </summary>
@@ -88,8 +82,8 @@ namespace ListBoxDemo.Controls {
         /// 当前节点边距
         /// </summary>
         public Thickness LevelPadding {
-            get { 
-                return new Thickness(15 * Level, 0, 0, 0); 
+            get {
+                return new Thickness(15 * Level, 0, 0, 0);
             }
         }
 
@@ -102,7 +96,7 @@ namespace ListBoxDemo.Controls {
             }
 
             set {
-                if(isExpanded != value) {
+                if (isExpanded != value) {
                     isExpanded = value;
                     if (isExpanded) {
                         LoadingChildren();
@@ -139,7 +133,7 @@ namespace ListBoxDemo.Controls {
             var ret = new List<TreeListViewNode>();
             ret.Add(this);
             if (IsExpanded && Children != null && Children.Any()) {
-                foreach (var child in this.Children) {
+                foreach (var child in Children) {
                     var data = child.ToList();
                     ret.AddRange(data);
                 }

@@ -1,9 +1,8 @@
-﻿using System.Diagnostics;
-using System.Linq;
+﻿using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace ListBoxDemo.Controls {
+namespace TreeListView.Controls {
     public class TreeListView : ListView {
 
         public static readonly DependencyProperty RootProperty;
@@ -55,7 +54,7 @@ namespace ListBoxDemo.Controls {
             if (Root is null)
                 return;
             var list = Root.ToList();
-            if(!ShowRoot && list.Any()) {
+            if (!ShowRoot && list.Any()) {
                 list.RemoveAt(0);
                 Root.IsExpanded = true;
                 Margin = new Thickness(-15, 0, 0, 0);
@@ -65,7 +64,7 @@ namespace ListBoxDemo.Controls {
 
         protected override void OnPropertyChanged(DependencyPropertyChangedEventArgs e) {
             base.OnPropertyChanged(e);
-            if(e.Property == ShowRootProperty || e.Property == RootProperty) {
+            if (e.Property == ShowRootProperty || e.Property == RootProperty) {
                 Reload();
             }
         }

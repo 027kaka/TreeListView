@@ -11,6 +11,30 @@
     Height="450"
     mc:Ignorable="d">
     <Grid>
-        <local:TreeListView x:Name="treeListView" />
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <local:TreeListView x:Name="treeListView" ShowRoot="False" />
+
+        <local:TreeListView x:Name="treeGridView" Grid.Column="1">
+            <local:TreeListView.View>
+                <local:TreeListGridView>
+                    <GridViewColumn Width="120" Header="序列号">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate DataType="{x:Type model:Book}">
+                                <ContentPresenter Content="{Binding}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn
+                        Width="100"
+                        DisplayMemberBinding="{Binding OrderNumber}"
+                        Header="序列号" />
+                </local:TreeListGridView>
+            </local:TreeListView.View>
+        </local:TreeListView>
+
     </Grid>
 </Window>

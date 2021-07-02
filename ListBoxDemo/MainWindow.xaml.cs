@@ -38,6 +38,44 @@ namespace ListBoxDemo {
             root.Children.Add(new TreeListViewNode("children - 7", root));
             root.Children.Add(new TreeListViewNode("children - 8", root));
             treeListView.Root = root;
+
+
+            var book = new Book("book name1", "123");
+            book.Children.Add(new Book("book name12", "12123", book));
+            var book2 = new Book("book name13", "13123", book);
+
+            book2.Children.Add(new Book("book name13-2", "13123-2", book2));
+            book2.Children.Add(new Book("book name13-2", "13123-2", book2));
+            book2.Children.Add(new Book("book name13-2", "13123-2", book2));
+            book2.Children.Add(new Book("book name13-2", "13123-2", book2));
+            book2.Children.Add(new Book("book name13-2", "13123-2", book2));
+            book2.Children.Add(new Book("book name13-2", "13123-2", book2));
+
+            book.Children.Add(book2);
+            book.Children.Add(new Book("book name14", "14123", book));
+            book.Children.Add(new Book("book name15", "15123", book));
+            book.Children.Add(new Book("book name16", "16123", book));
+            book.IsExpanded = true;
+            treeGridView.Root = book;
         }
     }
+
+
+    public class Book : TreeListViewNode {
+        private string orderNumber;
+        public Book(string text, string orderNumber, Book parent = null) : base(text, parent) {
+            this.orderNumber = orderNumber;
+        }
+
+        public string OrderNumber {
+            get {
+                return orderNumber;
+            }
+
+            set {
+                orderNumber = value;
+            }
+        }
+    }
+
 }

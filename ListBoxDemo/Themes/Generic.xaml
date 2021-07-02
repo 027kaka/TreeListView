@@ -6,5 +6,4 @@
         <ResourceDictionary Source="pack://application:,,,/Themes/Styles/TreeListView.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-
 </ResourceDictionary>
