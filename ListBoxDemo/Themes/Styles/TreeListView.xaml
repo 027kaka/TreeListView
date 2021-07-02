@@ -143,7 +143,6 @@
     </Style>
 
     <Style TargetType="local:TreeListViewNode">
-        <Setter Property="IsExpanded" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:TreeListViewItem}}, Path=IsOpen, Mode=TwoWay}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="local:TreeListViewNode">
@@ -153,12 +152,19 @@
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Center"
                                 Orientation="Horizontal">
-                                <CheckBox IsChecked="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:TreeListViewItem}}, Path=IsOpen, Mode=TwoWay}" IsThreeState="False" />
-                                <!--<ToggleButton IsChecked="{Binding RelativeSource={RelativeSource Mode=Self}, Path=IsExpanded, Mode=TwoWay}" Style="{StaticResource ExpandCollapseToggleStyle}" />-->
+                                <ToggleButton
+                                    Name="expander"
+                                    IsChecked="{Binding IsExpanded}"
+                                    Style="{StaticResource ExpandCollapseToggleStyle}" />
                                 <TextBlock Text="{Binding Text}" />
                             </StackPanel>
                         </Border>
                     </Border>
+                    <ControlTemplate.Triggers>
+                        <DataTrigger Binding="{Binding HasItem}" Value="False">
+                            <Setter TargetName="expander" Property="Visibility" Value="Hidden" />
+                        </DataTrigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
