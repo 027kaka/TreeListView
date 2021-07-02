@@ -1,11 +1,11 @@
 # README
 
-treeListView for wpf 
+tree list view control for wpf 
 
 
-## 效果截图
+## screenshot
 
-![效果截图](https://github.com/rsdte/TreeListView/blob/master/Snipaste_2021-07-02_23-41-31.jpg)
+![screenshot](https://github.com/rsdte/TreeListView/blob/master/Snipaste_2021-07-02_23-41-31.jpg)
 
 
 
