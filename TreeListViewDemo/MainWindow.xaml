@@ -21,7 +21,7 @@
         <local:TreeListView x:Name="treeGridView" Grid.Column="1">
             <local:TreeListView.View>
                 <local:TreeListGridView>
-                    <GridViewColumn Width="120" Header="序列号">
+                    <GridViewColumn Width="120" Header="书名">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate DataType="{x:Type model:Book}">
                                 <ContentPresenter Content="{Binding}" />
